@@ -11,7 +11,6 @@
     <header></header>
 
         
-        
 
     </header>
 
@@ -19,13 +18,13 @@
     <nav class="nav">
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a style="text-decoration: none;" href="">Inicio</a>
+                <a style="text-decoration: none;" href="{% url "inicio" %}">Inicio</a>
             </li>            
             <li class="nav-item">
-                <a style="text-decoration: none;" href="">Prueba</a>
+                <a style="text-decoration: none;" href="{% url "Hola_prueba" %}">Prueba</a>
             </li>
             <li class="nav-item">
-                <a style="text-decoration: none;" href="">Estudiante</a>
+                <a style="text-decoration: none;" href="{% url "lista-estudiantes" %}">Estudiante</a>
             </li>               
         </ul>
     </nav>
