@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block content %}
+
+<table class="table table-dark table-striped">
+   <thead>
+     <tr>
+       <th scope="col">#</th>
+       <th scope="col">id_curso</th>
+       <th scope="col">Nombre</th>
+       <th scope="col">Capacidad maxima</th>
+       <th scope="col">Profesor ID</th>
+     </tr>
+   </thead>
+   <tbody>
+     {% for curso in curso %}
+     <tr>
+       <th scope="row">{{ forloop.counter }}</th>
+       <td>{{ curso.id_curso }}</td>
+       <td>{{ curso.nombre }}</td>
+       <td>{{ curso.capacidad_max }}</td>
+       <td>{{ curso.profesor_id }}</td>
+     </tr>
+     {% endfor %}
+   </tbody>
+</table>
+
+{% endblock %}
