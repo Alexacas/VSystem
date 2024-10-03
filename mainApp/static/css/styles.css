@@ -1,5 +1,3 @@
-
-
 *{
     margin: 0px;
     padding: 0px;
@@ -134,7 +132,9 @@ footer{
 }
 
 .box form{
-    width: 40%;
+    width: 50%;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    display: block; /* Asegura que el contenedor se comporte como un bloque */
 }
 
 .box form input,
@@ -150,18 +150,22 @@ footer{
 }
 
 .box form input[type="text"]{
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .box form input[type="submit"],
 .box form input[type="submit"],
 .box form button{
-    padding: 10px;
+    padding: 20px 10px;
     margin-top: 5px;
     background: #42a096;
     color: #1B1E1F;
-    width: 30%;
+    width: 100%;
     transition: 300ms all;
+    text-align:center;
+    font-size: 16px;
+    line-height: 0.3;
+    
 }
 
 .box form input[type="submit"]:hover,
@@ -226,4 +230,12 @@ footer{
     float: left;
     padding: 15px;
     padding-top: 0px;
+}
+
+.title {
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Pone el texto en negrita */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    margin-bottom: 20px; /* Añade espacio debajo del título */
+    font-family: 'Roboto', sans-serif;
 }

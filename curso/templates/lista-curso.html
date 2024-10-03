@@ -5,20 +5,18 @@
    <thead>
      <tr>
        <th scope="col">#</th>
-       <th scope="col">id_curso</th>
-       <th scope="col">Nombre</th>
-       <th scope="col">Capacidad maxima</th>
-       <th scope="col">Profesor ID</th>
+       <th scope="col">Nombre del Curso</th>
+       <th scope="col">Capacidad Máxima</th>
+       <th scope="col">Profesor</th>
      </tr>
    </thead>
    <tbody>
-     {% for curso in curso %}
+     {% for curso in cursos %}  <!-- Cambia 'curso' a 'cursos' para mayor claridad -->
      <tr>
        <th scope="row">{{ forloop.counter }}</th>
-       <td>{{ curso.id_curso }}</td>
        <td>{{ curso.nombre }}</td>
        <td>{{ curso.capacidad_max }}</td>
-       <td>{{ curso.profesor_id }}</td>
+       <td>{{ curso.profesor.nombre }} {{ curso.profesor.apellidos }}</td>  <!-- Accede al nombre y apellidos del profesor -->
      </tr>
      {% endfor %}
    </tbody>

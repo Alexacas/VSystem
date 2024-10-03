@@ -1,13 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-from .models import Persona
+from .models import Curso
+from persona.models import Persona
 
-def get_curso(request):
+def get_cursos(request):
     
-    profesor = Persona.objects.filter(rol='Profesor')
+    cursos = Curso.objects.all() 
+    profesor = Persona.objects.filter(rol='Profesor')  
+    return render(request, 'lista-curso.html', {
+        'title': 'Lista de cursos',
+        'cursos': cursos
+        })
     
-    return render(request, 'lista-curso.html',{
-        'title': 'Lista curso ',
-        'profesores': profesor
-    })
-
+    ## falta filtrar profesor, cursos funcionando

@@ -3,12 +3,13 @@
 
 <table class="table table-dark table-striped">
    <thead>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
      <tr>
        <th scope="col">#</th>
        <th scope="col">Nombre</th>
        <th scope="col">Apellido</th>
        <th scope="col">Documento</th>
-       <th scope="col">Rol</th>
+       <th scope="col">Rol </th>
      </tr>
    </thead>
    <tbody>
@@ -20,8 +21,45 @@
        <td>{{ estudiante.dni }}</td>
        <td>{{ estudiante.rol }}</td>
      </tr>
+     {% empty %}
+       <tr>
+           <td colspan="6">No hay estudiantes registrados.</td>
+       </tr>
      {% endfor %}
    </tbody>
 </table>
 
+<div class="nueva-seccion">
+  <h2 class="title">Inscribir Persona</h2> 
+  <div class="card">
+    <div class="card-body">
+      <form action="/registrarPersona/" method="POST">{% csrf_token %}
+        <div class="form-group">
+          <input type="text" name="txtnombre" class="form-control" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <input type="text" name="txtapellido" class="form-control" placeholder="Apellido">
+        </div>
+        <div class="form-group">
+          <input type="text" name="numdni" class="form-control" placeholder="Dni">
+        </div>
+        <div class="form-group">
+          <input type="text" name="numtelefono" class="form-control" placeholder="Telefono">
+        </div> 
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" placeholder="Correo Electronico">
+        </div>
+        <div class="form-group">
+          <input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha De Nacimiento">
+        </div>
+        <div class="form-group">
+          <input type="text" name="txtrol" class="form-control" placeholder="Rol">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-success btn-block text-white" value="Guardar" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
