@@ -1,4 +1,5 @@
 from django.db import models
+<<<<<<< HEAD
 from persona.models import Persona
 from django.core.exceptions import ValidationError
 
@@ -17,3 +18,7 @@ class Curso(models.Model):
 
     class Meta:
         db_table = 'Curso' 
+=======
+
+# Create your models here.
+>>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a

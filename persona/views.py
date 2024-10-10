@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
+=======
+from django.shortcuts import render
+>>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
 from django.http import HttpResponse, JsonResponse
 from .models import Persona
 
@@ -10,6 +14,7 @@ def get_estudiantes(request):
         'title': 'Lista de estudiantes ',
         'estudiantes': estudiantes
     })
+<<<<<<< HEAD
     
 def lista_personas(request):
     personas = Persona.objects.prefetch_related('cursos').filter(rol='estudiante')
@@ -36,3 +41,6 @@ def registrar_persona(request):
         )
         
         return redirect('lista-estudiantes')
+=======
+
+>>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a

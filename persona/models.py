@@ -10,8 +10,17 @@ class Persona(models.Model):
     rol = models.CharField(max_length=20)
     create_at = models.DateTimeField(auto_now=True)
 
+<<<<<<< HEAD
     def __str__(self):
         return f'{self.nombre} {self.apellidos} - {self.dni} - {self.rol}'
 
     class Meta:
         db_table = 'Persona'
+=======
+def __str__(self):
+    return f'{self.nombre} {self.apellidos} - {self.dni} - {self.rol}'
+   
+
+class Meta:
+    bd_table = 'Persona'
+>>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
