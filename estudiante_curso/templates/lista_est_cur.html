@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <h1>{{ title }}</h1>
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Estudiante</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Fecha inicio</th>
+                <th scope="col">Fecha final</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Nota final</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante_curso in estudiantes_cursos %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ estudiante_curso.estudiante.nombre }} {{ estudiante_curso.estudiante.apellidos }}</td>
+                <td>{{ estudiante_curso.curso.nombre }}</td>
+                <td>{{ estudiante_curso.fechaInicio }}</td>
+                <td>{{ estudiante_curso.fechaFinal }}</td>
+                <td>{{ estudiante_curso.estado }}</td>
+                <td>{{ estudiante_curso.notaFinal }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Botón para agregar nuevos estudiantes -->
+    <a href="{% url 'formulario_estudiante_curso' %}" class="btn btn-primary">Agregar nuevo estudiante</a>
+
+{% endblock %}

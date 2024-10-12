@@ -1,10 +1,10 @@
 from django.db import models
 from persona.models import Persona
-from curso.models import curso
+from curso.models import Curso
 
 class EstudianteCurso(models.Model):
     estudiante = models.ForeignKey(Persona, on_delete=models.SET_NULL, null = True, related_name='cursos', limit_choices_to={'rol':'Estudiante'})
-    curso = models.ForeignKey(curso, on_delete=models.SET_NULL, null= True)
+    curso = models.ForeignKey(Curso, on_delete=models.SET_NULL, null= True)
     fechaInicio = models.DateField()
     fechaFinal = models.DateField()
     estado = models.CharField(max_length=100)
@@ -14,4 +14,4 @@ class EstudianteCurso(models.Model):
         return f'{self.estudiante.nombre} - {self.estado} - Nota Final: {self.notaFinal}'
     
     class Meta:
-        db_table = 'Estudiantes_Cursos'
+        db_table = 'Estudiante_Cursos'

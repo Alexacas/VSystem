@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <h2>Agregar un estudiante en un curso</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar inscripción</button>
+    </form>
+
+{% endblock %}
