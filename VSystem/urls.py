@@ -16,17 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainApp.views import inicio, get_prueba
-from persona.views import get_estudiantes, registrar_persona
-from curso.views import get_cursos
+from mainApp.views import inicio
+from persona.views import get_estudiantes, formulario_estudiante
+from curso.views import get_curso, formulario
+from estudiante_curso.views import Estudiante_Curso, formulario_estudiante_curso
+from matricula.views import lista_matriculas, formulario_matricula
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name='inicio'),
     path('lista-estudiantes/', get_estudiantes, name='lista-estudiantes'),
-    path('prueba/', get_prueba, name='Hola_prueba'),
-    path('curso/', get_cursos, name='lista-curso'),
-    path('registrarPersona/', registrar_persona),
-
+    path('Lista-cursos/',get_curso,name='lista-cursos'),
+    path('cursos/agregar/', formulario, name='formulario_curso'),
+    path('estudiantes/agregar/', formulario_estudiante, name='formulario_estudiante'),
+     path('estudiantes-curso/', Estudiante_Curso, name='lista-estudiantes-cursos'),  
+    path('estudiantes-curso/agregar/', formulario_estudiante_curso, name='formulario_estudiante_curso'),
+    path('matriculas/', lista_matriculas, name='lista-matriculas'), 
+    path('matriculas/nueva/', formulario_matricula, name='formulario_matricula'),
 ]

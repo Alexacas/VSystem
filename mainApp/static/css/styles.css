@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
 *{
     margin: 0px;
     padding: 0px;
@@ -137,13 +132,9 @@ footer{
 }
 
 .box form{
-<<<<<<< HEAD
     width: 50%;
     margin: 0 auto; /* Esto centra el contenedor horizontalmente */
     display: block; /* Asegura que el contenedor se comporte como un bloque */
-=======
-    width: 40%;
->>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
 }
 
 .box form input,
@@ -159,17 +150,12 @@ footer{
 }
 
 .box form input[type="text"]{
-<<<<<<< HEAD
     text-transform: none;
-=======
-    text-transform: uppercase;
->>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
 }
 
 .box form input[type="submit"],
 .box form input[type="submit"],
 .box form button{
-<<<<<<< HEAD
     padding: 20px 10px;
     margin-top: 5px;
     background: #42a096;
@@ -180,14 +166,6 @@ footer{
     font-size: 16px;
     line-height: 0.3;
     
-=======
-    padding: 10px;
-    margin-top: 5px;
-    background: #42a096;
-    color: #1B1E1F;
-    width: 30%;
-    transition: 300ms all;
->>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
 }
 
 .box form input[type="submit"]:hover,
@@ -252,7 +230,6 @@ footer{
     float: left;
     padding: 15px;
     padding-top: 0px;
-<<<<<<< HEAD
 }
 
 .title {
@@ -261,6 +238,4 @@ footer{
     font-size: 24px; /* Ajusta el tamaño de la fuente según tus necesidades */
     margin-bottom: 20px; /* Añade espacio debajo del título */
     font-family: 'Roboto', sans-serif;
-=======
->>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
 }

@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <h1>{{ title }}</h1>
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Estudiante</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Fecha de inicio</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Costo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for matricula in matriculas %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ matricula.estudiante_curso.estudiante.nombre }} {{ matricula.estudiante_curso.estudiante.apellidos }}</td>
+                <td>{{ matricula.estudiante_curso.curso.nombre }}</td>
+                <td>{{ matricula.fecha_inicio }}</td>
+                <td>
+                    <span class="
+                        {% if matricula.estado == 'Activo' %} estado-activo 
+                        {% elif matricula.estado == 'Suspendido' %} estado-suspendido 
+                        {% elif matricula.estado == 'Finalizado' %} estado-finalizado 
+                        {% endif %}
+                    ">
+                        {{ matricula.estado }}
+                    </span>
+                </td>
+                <td>{{ matricula.costo }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Botón para agregar nuevas matrículas -->
+    <a href="{% url 'formulario_matricula' %}" class="btn btn-primary">Agregar nueva matrícula</a>
+
+{% endblock %}

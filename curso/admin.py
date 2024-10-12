@@ -1,9 +1,12 @@
 from django.contrib import admin
-<<<<<<< HEAD
-from .models import Curso
+from .models import curso
+from persona.models import Persona
 
-admin.site.register(Curso)
-=======
-
-# Register your models here.
->>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
+@admin.register(curso)
+class CursoAdmin(admin.ModelAdmin):
+    list_display = ("id", "nombre", "capacidad_max", "profesor")
+    
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "profesor":
+            kwargs["queryset"] = Persona.objects.filter(rol='Profesor')
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)

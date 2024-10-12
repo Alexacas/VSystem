@@ -1,19 +1,22 @@
-from django.shortcuts import render
-<<<<<<< HEAD
+from django.shortcuts import render, redirect
 from .models import Curso
-from persona.models import Persona
+from .forms import CursoForm
 
 def get_cursos(request):
-    
-    cursos = Curso.objects.all() 
-    profesor = Persona.objects.filter(rol='Profesor')  
+    cursos = Curso.objects.all()   
     return render(request, 'lista-curso.html', {
         'title': 'Lista de cursos',
         'cursos': cursos
         })
     
-    ## falta filtrar profesor, cursos funcionando
-=======
+def formulario(request):
+    if request.method == 'POST':
+        form = CursoForm(request.POST)
+        if form.is_valid():
+            form.save()  # Guarda el nuevo curso
+            return redirect('lista-cursos')  # Redirige a la página de lista de cursos después de guardar
+    else:
+        form = CursoForm()
 
-# Create your views here.
->>>>>>> 3f6871f1d622b82cb8675ec113f60789721c189a
+    return render(request, 'formulario_curso.html', {'form': form})
+
