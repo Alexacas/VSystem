@@ -8,5 +8,5 @@ class CursoAdmin(admin.ModelAdmin):
     
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "profesor":
-            kwargs["queryset"] = Persona.objects.filter(rol='Profesor')
+            kwargs["queryset"] = Persona.objects.filter(rol='profesor')
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
