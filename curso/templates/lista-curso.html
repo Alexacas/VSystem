@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 
-<table class="table table-dark table-striped">
+<table class="table table-success table-striped">
    <thead>
      <tr>
        <th scope="col">#</th>
@@ -11,12 +11,12 @@
      </tr>
    </thead>
    <tbody>
-     {% for curso in cursos %}  <!-- Cambia 'curso' a 'cursos' para mayor claridad -->
+     {% for curso in cursos %} 
      <tr>
        <th scope="row">{{ forloop.counter }}</th>
        <td>{{ curso.nombre }}</td>
        <td>{{ curso.capacidad_max }}</td>
-       <td>{{ curso.profesor.nombre }} {{ curso.profesor.apellidos }}</td>  <!-- Accede al nombre y apellidos del profesor -->
+       <td>{{ curso.profesor.nombre }} {{ curso.profesor.apellidos }}</td>  
      </tr>
      {% endfor %}
    </tbody>

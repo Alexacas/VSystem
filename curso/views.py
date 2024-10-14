@@ -13,8 +13,8 @@ def formulario(request):
     if request.method == 'POST':
         form = CursoForm(request.POST)
         if form.is_valid():
-            form.save()  # Guarda el nuevo curso
-            return redirect('lista-cursos')  # Redirige a la página de lista de cursos después de guardar
+            form.save()  
+            return redirect('lista-cursos')  
     else:
         form = CursoForm()
 

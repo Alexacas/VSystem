@@ -16,10 +16,10 @@ def formulario_estudiante(request):
     if request.method == 'POST':
         form = PersonaForm(request.POST)
         if form.is_valid():
-            estudiante = form.save(commit=False)  # No guardar aún en la base de datos
-            estudiante.rol = 'Estudiante'  # Asignar el rol predeterminado
-            estudiante.save()  # Ahora guarda el estudiante
-            return redirect('lista-estudiantes')  # Redirige a la lista de estudiantes después de guardar
+            estudiante = form.save(commit=False)  
+            estudiante.rol = 'Estudiante'  
+            estudiante.save()  
+            return redirect('lista-estudiantes')  
     else:
         form = PersonaForm()
 

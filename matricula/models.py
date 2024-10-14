@@ -11,4 +11,4 @@ class Matricula(models.Model):
         return f'Matrícula de {self.estudiante_curso.estudiante.nombre} en {self.estudiante_curso.curso.nombre} - Estado: {self.estado} - Costo: {self.costo}'
 
     class Meta:
-        db_table = 'Matriculas'  # Cambié a plural para seguir la convención
+        db_table = 'Matriculas' 

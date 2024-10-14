@@ -11,12 +11,12 @@ class Curso(models.Model):
     estudiantes = models.ManyToManyField(Persona, related_name='cursos_estudiante', blank=True) 
     
     def save(self, *args, **kwargs):
-        self.full_clean()  # Valida todo el modelo antes de guardar
+        self.full_clean()  
         super().save(*args, **kwargs)
     
     def clean(self):
         try:
-            self.capacidad_max = int(self.capacidad_max)  # Convertir a entero
+            self.capacidad_max = int(self.capacidad_max)  
         except ValueError:
             raise ValidationError("Capacidad máxima debe ser un número entero.")
         

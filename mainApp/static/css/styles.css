@@ -13,7 +13,7 @@ body{
 header{
     width: 1212px;
     height: 140px;
-    background-color: #686a6b;
+    background-color: #0067f7;
     margin: 0 auto;
 
 }
@@ -54,7 +54,7 @@ nav{
     width: 1211px;
     height: 40px;
     margin: 0 auto;
-    background-color: #000000;
+    background-color: #90afff;
     border: 1px solid #090249;
     
     font-size: 15px;    
@@ -233,9 +233,37 @@ footer{
 }
 
 .title {
-    text-align: center; /* Centra el texto */
-    font-weight: bold; /* Pone el texto en negrita */
-    font-size: 24px; /* Ajusta el tamaño de la fuente según tus necesidades */
-    margin-bottom: 20px; /* Añade espacio debajo del título */
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 24px; 
+    margin-bottom: 20px; 
     font-family: 'Roboto', sans-serif;
+}
+
+/*Boton para realizar los filtros*/
+.filter-container {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+    flex-wrap: wrap; 
+}
+
+/* Estilo de los botones */
+.filter-button {
+    padding: 10px 25px;
+    background-color: #4ca6ff !important; 
+    color: white !important; 
+    border: 2px solid #4ca6ff; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 300ms all;
+    text-align: center;
+    font-weight: bold;
+    min-width: 150px; 
+}
+
+.filter-button:hover {
+    background-color: #007bff !important; 
+    border: 2px solid #007bff !important;
 }
